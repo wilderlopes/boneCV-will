@@ -1,10 +1,15 @@
 #!/bin/bash
 
 echo "Video Converter - Input file is a mjpg"
-echo "Choose the output format (Example: mkv, mpeg, avi, ...)"
+echo "Provide input filename"
 
-read ofmt
+read inputfile
 
-avconv -i output.mjpg -vcodec copy output."$ofmt"
+echo "Choose the output filename with format (Example: output.mkv, 
+output.mpeg, output.avi, ...)"
+
+read outputfile
+
+avconv -i "$inputfile" -vcodec copy "$outputfile"
 
 echo "Finished"
