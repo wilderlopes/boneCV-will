@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "Video Converter - Input file is a mjpg"
+echo "Choose the output format (Example: mkv, mpeg, avi, ...)"
+
+read ofmt
+
+avconv -i output.mjpg -vcodec copy output."$ofmt"
+
+echo "Finished"
