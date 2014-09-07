@@ -70,8 +70,8 @@ int main(int argc, char **argv)
 
         CLEAR(fmt);
         fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
-        fmt.fmt.pix.width       = 1920;
-        fmt.fmt.pix.height      = 1080;
+        fmt.fmt.pix.width       = 1280;
+        fmt.fmt.pix.height      = 720;
         fmt.fmt.pix.pixelformat = V4L2_PIX_FMT_RGB24;
         fmt.fmt.pix.field       = V4L2_FIELD_INTERLACED;
         xioctl(fd, VIDIOC_S_FMT, &fmt);
@@ -120,7 +120,7 @@ int main(int argc, char **argv)
         type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
 
         xioctl(fd, VIDIOC_STREAMON, &type);
-        for (i = 0; i < 20; i++) {
+        for (i = 0; i < 1; i++) {
                 do {
                         FD_ZERO(&fds);
                         FD_SET(fd, &fds);
